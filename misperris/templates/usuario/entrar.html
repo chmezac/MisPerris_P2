@@ -54,7 +54,7 @@
 <br>
 <section class="textos">
     <h3 align='center'><b>INICIAR SESION</b></h3> 
-    <p align='center'>Por favor, indica los datos que aparecen a continuación para registrarte.</p>
+    <p align='center'>Por favor, indica los datos que aparecen a continuación para entrar.</p>
 <br>
     
 <form method="post">
@@ -78,15 +78,41 @@
         <div class="row">
             <div class="col-md-6 col-md-offset-3">
                 <div class="form-group">
-                    <a href="#}">Olvidé mi contraseña</a>
+                    <a href="{% url 'PasswordResetView' %}">Olvidé mi contraseña</a>
                     <input class="btn btn-primary" type="submit" value="Ingresar">
                </div>
             </div>
         </div>
     </form>
-
 </section>
 
+
+<footer>
+        <table>
+            <tr>
+                    <td> Correo electrónico:</td>
+                        <td> 
+                            <a href="mailto:contacto@misperris.cl">contacto@misperris.cl</a>
+                        </td>
+            </tr>
+    
+    
+            <tr>
+                    <td> Teléfono de contacto:</td>
+                    <td> 
+                        <a href="tel:+56981488490">+56 9 8 148 84 90</a>
+                    </td>
+            </tr>
+    
+    
+            <tr>
+                    <td colspan="2">
+                      <br>
+                       <b>MIS PERRIS 2018 - &copy; Todos los derechos reservados</b> 
+                    </td>  
+            </tr>
+        </table>
+    </footer>
 
 <!-- JavaScript -->
 <script src="{% static 'js/main.js' %}"></script>

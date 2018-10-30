@@ -15,8 +15,9 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import include, path
+from django.conf.urls import url
 
-from django.contrib.auth.views import LoginView#, password_reset, password_reset_done, password_reset_confirm, password_reset_complete
+from django.contrib.auth.views import LoginView, PasswordResetView, PasswordResetDoneView, PasswordResetConfirmView, PasswordResetCompleteView
 from django.contrib.auth import views as auth_views
 
 
@@ -30,8 +31,9 @@ urlpatterns = [
     path('usuario/', include ('apps.usuario.urls')),
     path('', LoginView.as_view(template_name='index.html'), name="login"),
     
-    ##path('reset/password/', PasswordResetView.as_view(), name='reset_password'),
-    #path('reset/password/done/', PasswordResetDoneView.as_view(), name='password_reset_done'),
-    ##path('reset/password/confirm/P<uidb64>P<token>/', PasswordResetConfirmView.as_view(), name='password_reset_confirm'),
-    #path('reset-password/complete/', PasswordResetCompleteView.as_view(), name='password_reset_complete'),
+    #Cambiar contraseña
+    path('reset-password/', PasswordResetView.as_view(), name='reset_password'),
+    path('reset-password/done/', PasswordResetDoneView.as_view(), name='password_reset_done'),
+    path('reset-password/confirm/P<uidb64>P<token>/', PasswordResetConfirmView.as_view(), name='password_reset_confirm'),
+    path('reset-password/complete/', PasswordResetCompleteView.as_view(), name='password_reset_complete'),
 ]

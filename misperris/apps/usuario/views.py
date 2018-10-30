@@ -18,3 +18,9 @@ class RegistroUsuario(CreateView):
 def entrar(request):
     return render(request, 'usuario/entrar.html')
 
+def PasswordResetView(request):
+    return render(request, 'usuario/password_reset_email.html')
+
+class PasswordReset(CreateView):
+	model = User
+	template_name = "usuario/password_reset_email.html.html"
