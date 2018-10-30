@@ -12,10 +12,16 @@
     <link href="https://file.myfontastic.com/AVEWBsVH8FBhKrqar9Evj8/icons.css" rel="stylesheet">
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 
+
+
+
+    
     <!-- Planillas CSS -->
     <link href="{% static 'css/main.css' %}" rel="stylesheet">
     <link href="{% static 'css/carrusel.css' %}" rel="stylesheet">
     <link href="{% static 'css/movil.css' %}" rel="stylesheet">
+    <link href="{% static 'css/list.css' %}" rel="stylesheet">
+
     
 
     <!--CARRUSEL-->
@@ -51,31 +57,48 @@
 
 
 
+
 <br>
+<section class="textos">
+    <h3 align='center'><b>REGISTROS</b></h3> 
+    <p align='center'>A continuación, se mostrarán los registrso hechos en Mis Perris</p>
+   <br>
+   
 <table class="table table-borded">
-    <thead>
+    <thead calss="tabla_regist"> 
         <tr>
-            <td>#</td>
-            <td>Nombre</td>
-            <td>Raza</td>
-            <td>Descripcion</td>
-            <td>Estado</td>
-            <td>Persona</td>
+            <td><b>#</b></td>
+            <td><b>Nombre</b></td>
+            <td><b>Raza</b></td></b>
+            <td><b>Descripcion</b>
+            <td><b>Estado</b></td>
+            <td><b>Persona</b></td>
         </tr>
     </thead>
 
     <tbody>
+        {% if mascota %}
+        {% for mascota in mascota %}
+
         <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
+            <td><b>{{ mascota.id }})</b></td>
+            <td>{{ mascota.nombre }}</td>
+            <td>{{ mascota.raza }}</td>
+            <td>{{ mascota.descripcion }}</td>
+            <td>{{ mascota.state }}</td>
+            <td>{{ mascota.persona.nombre }}</td>
         </tr>
+        {% endfor %}
+
+        {% else %}
+        <h1 class="mensaje_list" align='center'>Ups!, NO hay registros de mascotas</h1>
+        <br>
+
+        {% endif %}
+
     </tbody>
 </table>
-
+</section>
 
 
 
