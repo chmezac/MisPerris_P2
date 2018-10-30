@@ -1,3 +1,4 @@
+from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from django.contrib.auth.models import User
 from django.contrib.auth.forms import UserCreationForm
@@ -12,3 +13,8 @@ class RegistroUsuario(CreateView):
 	template_name = "usuario/registrar.html"
 	form_class = RegistroForm
 	success_url = reverse_lazy('mascota:mascota_listar')
+
+
+def entrar(request):
+    return render(request, 'usuario/entrar.html')
+
