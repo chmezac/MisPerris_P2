@@ -45,10 +45,10 @@
       <span class="icon-bars" id="btn-menu"></span>
       <nav class="nav" id="nav">
        <ul class="menu">
-           <li><a class="menu__link" href="index.html">&#127968; Inicio</a></li>
-           <li><a class="menu__link" href="usuario.html">&#128100; Unirme</a></li>
-           <li><a class="menu__link" href="formulario.html">&#128054; Registrar Un Perro</a></li>
-           <li><a class="menu__link" href="#">&#9993; Contacto</a></li>
+            <li><a class="menu__link" href="{% url 'mascota:index' %}">&#127968; Inicio</a></li>
+            <li><a class="menu__link" href="{% url 'mascota:mascota_crear' %}">&#128054; Registrar Un Perro</a></li>
+            <li><a class="menu__link" href="{% url 'registrar' %}">&#128100; Unirme</a></li>
+            <li><a class="menu__link" href="/admin/">&#128273;Entrar</a></li>
        </ul>   
       </nav>
   </div>
@@ -79,8 +79,8 @@
     </thead>
 
     <tbody>
-        {% if mascota %}
-        {% for mascota in mascota %}
+        {% if object_list %}
+        {% for mascota in object_list %}
 
         <tr>
             <td><b>{{ mascota.id }})</b></td>
@@ -112,34 +112,6 @@
 </table>
 </section>
 
-
-
-<footer>
-    <table>
-        <tr>
-                <td> Correo electrónico:</td>
-                    <td> 
-                        <a href="mailto:contacto@misperris.cl">contacto@misperris.cl</a>
-                    </td>
-        </tr>
-
-
-        <tr>
-                <td> Teléfono de contacto:</td>
-                <td> 
-                    <a href="tel:+56981488490">+56 9 8 148 84 90</a>
-                </td>
-        </tr>
-
-
-        <tr>
-                <td colspan="2">
-                  <br>
-                   <b>MIS PERRIS 2018 - &copy; Todos los derechos reservados</b> 
-                </td>  
-        </tr>
-    </table>
-</footer>
 
 
 <!-- JavaScript -->

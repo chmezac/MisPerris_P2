@@ -14,6 +14,13 @@ table, h1{
 }
 
 
+.form-group label{
+    color: white;
+    font-size: 20px;
+}
+
+
+
 /*IPHONE 5*/
 @media only screen and (min-width:320px) and (max-width:568px) {
     thead, .tabla_regist{
